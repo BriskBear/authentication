@@ -2,19 +2,24 @@ class SessionsController < ApplicationController
   before_action :redirect_if_authenticated, only: %i[create new]
   before_action :authenticate_user!, only: [:destroy]
 
+  def authenticate_any(identity, password)
+    if identity.match?('@')
+      User.authenticate_by(email: identity.downcase, password:)
+    else
+      User.authenticate_by(username: identity, password:)
+    end
+  end
+
   def create
-    @user = params[:user][:identity].match?('@') ? User.find_by(email: params[:user][:identity].downcase) : User.find_by(username: params[:user][:identity])
+    @user = authenticate_any(param[:user][:identity], param[:user][:password])
     if @user
       if @user.unconfirmed?
         redirect_to new_confirmation_path, alert: 'Incorrect Credentials.'
-      elsif @user.authenticate(params[:user][:password])
-        after_login_path = session[:user_return_to] || root_path
-        login @user
-        remember(@user) if params[:user][:remember_me] == '1'
-        redirect_to after_login_path, notice: 'Signed in.'
       else
-        flash.now[:alert] = 'Incorrect Credentials.'
-        render :new, status: :unprocessable_entity
+        after_login_path = session[:user_return_to] || root_path
+        redirect_to after_login_path, notice: 'Signed in.'
+        active_session = login @user
+        remember(active_session) if params[:user][:remember_me] == '1'
       end
     else
       flash.now[:alert] = 'Incorrect Credentials.'
@@ -23,7 +28,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    forget(current_user)
+    forget_active_session
     logout
     redirect_to to_root_path, notice: 'Signed out.'
   end

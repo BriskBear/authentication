@@ -40,3 +40,24 @@
 2023-07-22 07:34:05.160 MDT [2372] LOG:  checkpoint complete: wrote 8 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.705 s, sync=0.012 s, total=0.733 s; sync files=8, longest=0.009 s, average=0.002 s; distance=18 kB, estimate=18 kB
 2023-07-22 08:44:05.561 MDT [2372] LOG:  checkpoint starting: time
 2023-07-22 08:44:07.197 MDT [2372] LOG:  checkpoint complete: wrote 17 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.607 s, sync=0.012 s, total=1.636 s; sync files=16, longest=0.009 s, average=0.001 s; distance=73 kB, estimate=73 kB
+2023-07-22 14:22:54.007 MDT [4892] FATAL:  lock file "postmaster.pid" already exists
+2023-07-22 14:22:54.007 MDT [4892] HINT:  Is another postmaster (PID 2371) running in data directory "/opt/account/db/data"?
+2023-07-22 14:24:09.460 MDT [5243] FATAL:  lock file "postmaster.pid" already exists
+2023-07-22 14:24:09.460 MDT [5243] HINT:  Is another postmaster (PID 2371) running in data directory "/opt/account/db/data"?
+2023-07-22 16:14:14.157 MDT [2372] LOG:  checkpoint starting: time
+2023-07-22 16:14:18.422 MDT [2372] LOG:  checkpoint complete: wrote 43 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.232 s, sync=0.016 s, total=4.266 s; sync files=35, longest=0.009 s, average=0.001 s; distance=154 kB, estimate=154 kB
+2023-07-22 16:19:14.460 MDT [2372] LOG:  checkpoint starting: time
+2023-07-22 16:19:16.198 MDT [2372] LOG:  checkpoint complete: wrote 18 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.708 s, sync=0.012 s, total=1.738 s; sync files=17, longest=0.008 s, average=0.001 s; distance=80 kB, estimate=147 kB
+2023-07-22 16:44:14.698 MDT [2372] LOG:  checkpoint starting: time
+2023-07-22 16:44:16.631 MDT [2372] LOG:  checkpoint complete: wrote 20 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.909 s, sync=0.013 s, total=1.933 s; sync files=17, longest=0.009 s, average=0.001 s; distance=87 kB, estimate=141 kB
+2023-07-22 17:09:14.977 MDT [2372] LOG:  checkpoint starting: time
+2023-07-22 17:09:16.006 MDT [2372] LOG:  checkpoint complete: wrote 11 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.006 s, sync=0.006 s, total=1.030 s; sync files=8, longest=0.004 s, average=0.001 s; distance=1 kB, estimate=127 kB
+2023-07-22 17:14:14.106 MDT [2372] LOG:  checkpoint starting: time
+2023-07-22 17:14:14.839 MDT [2372] LOG:  checkpoint complete: wrote 8 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.705 s, sync=0.012 s, total=0.733 s; sync files=8, longest=0.010 s, average=0.002 s; distance=8 kB, estimate=115 kB
+2023-07-22 17:35:43.804 MDT [2371] LOG:  received fast shutdown request
+2023-07-22 17:35:43.812 MDT [2371] LOG:  aborting any active transactions
+2023-07-22 17:35:43.816 MDT [2371] LOG:  background worker "logical replication launcher" (PID 2377) exited with exit code 1
+2023-07-22 17:35:43.816 MDT [2372] LOG:  shutting down
+2023-07-22 17:35:43.819 MDT [2372] LOG:  checkpoint starting: shutdown immediate
+2023-07-22 17:35:43.831 MDT [2372] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.015 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=104 kB
+2023-07-22 17:35:43.836 MDT [2371] LOG:  database system is shut down

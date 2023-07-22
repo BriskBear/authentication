@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-  before_action :redirect_if_authenticated, only: [:create, :new]
+  before_action :redirect_if_authenticated, only: %i[create new]
 
   def create
     @user = User.new(create_user_params)
     if @user.save
       @user.send_confirmation_email!
-      redirect_to root_path, notice "Please check your email for confirmation instructions."
+      redirect_to root_path, notice: 'Please check your email for confirmation instructions.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -17,9 +17,10 @@ class UsersController < ApplicationController
     reset_session
     redirect_to root_path, notice: "Account Deleted: #{name}"
   end
-  
+
   def edit
     @user = current_user
+    @active_sessions = @user.active_sessions.order(created_at: :desc)
   end
 
   def new
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
+    @active_sessions = @user.active_sessions.order(created_at: :desc)
     if @user.authenticate(params[:user][:current_password])
       if @user.update(update_user_params)
         if params[:user][:unconfirmed_email].present?
@@ -37,7 +39,7 @@ class UsersController < ApplicationController
           redirect_to root_path, notice: 'Account updated.'
         end
       else
-          render :edit, status: :unprocessable_entity
+        render :edit, status: :unprocessable_entity
       end
     else
       flash.now[:error] = 'Incorrect Password.'
