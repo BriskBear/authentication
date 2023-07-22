@@ -1,0 +1,23 @@
+2023-07-21 21:57:46.024 MDT [4625] LOG:  starting PostgreSQL 15.3 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 13.1.1 20230429, 64-bit
+2023-07-21 21:57:46.024 MDT [4625] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-07-21 21:57:46.028 MDT [4625] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2023-07-21 21:57:46.029 MDT [4625] LOG:  database system is shut down
+2023-07-21 21:58:20.297 MDT [4691] LOG:  starting PostgreSQL 15.3 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 13.1.1 20230429, 64-bit
+2023-07-21 21:58:20.297 MDT [4691] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-07-21 21:58:20.300 MDT [4691] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": Permission denied
+2023-07-21 21:58:20.301 MDT [4691] LOG:  database system is shut down
+2023-07-21 22:01:14.104 MDT [4914] LOG:  starting PostgreSQL 15.3 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 13.1.1 20230429, 64-bit
+2023-07-21 22:01:14.105 MDT [4914] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-07-21 22:01:14.107 MDT [4914] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": Permission denied
+2023-07-21 22:01:14.109 MDT [4914] LOG:  database system is shut down
+2023-07-21 22:33:44.333 MDT [20474] LOG:  starting PostgreSQL 15.3 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 13.1.1 20230429, 64-bit
+2023-07-21 22:33:44.334 MDT [20474] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-07-21 22:33:44.337 MDT [20474] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2023-07-21 22:33:44.345 MDT [20477] LOG:  database system was shut down at 2023-07-21 21:57:06 MDT
+2023-07-21 22:33:44.351 MDT [20474] LOG:  database system is ready to accept connections
+2023-07-21 22:38:44.445 MDT [20475] LOG:  checkpoint starting: time
+2023-07-21 22:41:53.284 MDT [20475] LOG:  checkpoint complete: wrote 1888 buffers (11.5%); 1 WAL file(s) added, 0 removed, 0 recycled; write=188.730 s, sync=0.075 s, total=188.839 s; sync files=504, longest=0.008 s, average=0.001 s; distance=8718 kB, estimate=8718 kB
+2023-07-21 22:43:44.376 MDT [20475] LOG:  checkpoint starting: time
+2023-07-21 22:43:49.922 MDT [20475] LOG:  checkpoint complete: wrote 56 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.520 s, sync=0.016 s, total=5.546 s; sync files=39, longest=0.007 s, average=0.001 s; distance=222 kB, estimate=7869 kB
+2023-07-21 22:48:44.937 MDT [20475] LOG:  checkpoint starting: time
+2023-07-21 22:48:49.874 MDT [20475] LOG:  checkpoint complete: wrote 50 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.916 s, sync=0.011 s, total=4.938 s; sync files=34, longest=0.002 s, average=0.001 s; distance=163 kB, estimate=7098 kB
